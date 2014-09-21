@@ -1,0 +1,147 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Endliche Markovketten: Ein Beispiel}
+\begin{document}
+\begin{abstract}
+Endliche Markovketten in einem Anwendungsbeispiel.
+\end{abstract}
+\maketitle
+
+In diesem Beispiel lernen wir das Konzept der Markovkette aus der Wahrscheinlichkeitstheorie kennen. Technisches Hilfsmittel ist Matrizenrechnung.
+
+Wir betrachten Personen, die jeweils \emph{beschäftigt} (B) oder \emph{arbeitssuchend} (A) sind. Zu jedem Monatsersten kann sich der Status ändern, d.h. manche Arbeitssuchende finden Beschäftigung und umgekehrt. Und zwar ist
+\begin{align*}
+& \text{die Wahrscheinlichkeit, dass ein Beschäftigter beschäftigt bleibt:} p_{BB} = 0.9 \\
+& \text{die Wahrscheinlichkeit, dass ein Beschäftigter arbeitslos wird:} p_{BA} = 0.1 \\
+& \text{die Wahrscheinlichkeit, dass ein Arbeitssuchender arbeitslos bleibt:} p_{AA} = 0.3 \\
+\end{align*}
+
+
+\begin{question}
+Wie groß ist die Wahrscheinlichkeit, dass ein Arbeitssuchender Beschäftigung findet?
+\begin{solution}
+\begin{hint}
+Die Wahrscheinlichkeit muss sich mit $p_{AA}$ zu $1$ aufaddieren.
+\end{hint}
+\begin{hint}
+Es ist also $p_{AB} = 1 - p_{AA} = 0.7$.
+\end{hint}
+Es ist $p_{AB} =$ \answer{0.7}.
+\end{solution}
+\end{question}
+
+
+Nehmen wir nun an, dass aufgrund einer Werksschließung $1200$ Personen entlassen werden und arbeitssuchend sind. Aufgrund der oben angegebenen Wahrscheinlichkeiten erwarten wir, dass nach einem Monat ca.~$0.7 \cdot 1200 = 840$ Personen Arbeit gefunden haben und $0.3\cdot 1200 = 360$ Personen noch arbeitssuchend sind.
+
+\begin{question}
+Wie ist es nun nach zwei Monaten?
+\begin{solution}
+\begin{hint}
+Beachte, dass sowohl ein teil der Beschäftigten beschäftigt bleibt (nämlich 90\%), als auch ein Teil der Arbeitssuchenden Arbeit finden wird (nämlich 70\%).
+\end{hint}
+\begin{hint}
+Zu berechnen ist also $0.9 \cdot 840 + 0.7 \cdot 360$.
+\end{hint}
+Beschäftigt sind \answer{1008} Personen.
+\end{solution}
+\begin{solution}
+\begin{hint}
+Es gibt zwei Möglichkeiten, die Antwort zu berechnen. Eine analoge Rechnung wie im ersten Fall ist $0.1 \cdot 840 + 0.3 \cdot 360$. Da aber die Arbeitssuchenden genau diejenigen Personen sind, die nicht beschäftigt sind, lässt sich die Antwort auch aus dem ersten Teil berechnen als $1200 - 1008$.
+\end{hint}
+Arbeitssuchend sind \answer{192} Personen.
+\end{solution}
+\end{question}
+
+
+Die Ausdrücke $0.9 \cdot 840 + 0.7 \cdot 360$ und $0.1 \cdot 840 + 0.3 \cdot 360$ können wir elegant als das Ergebnis einer Matrizenmultiplikation zusammenfassen:
+\[
+\left(
+\begin{array}{cc}
+0.9 & 0.7 \\
+0.1 & 0.3    
+\end{array}
+\right) \left(
+\begin{array}{c}
+840 \\ 360    
+\end{array}
+\right) = \left(
+\begin{array}{c}
+0.9 \cdot 840 + 0.7 \cdot 360 \\
+0.1 \cdot 840 + 0.3 \cdot 360
+\end{array}
+\right) = \left(
+\begin{array}{c}
+1008 \\ 192
+\end{array}
+\right).
+\]
+
+Die entsprechende Rechnung funktioniert natürlich auch für den ersten Schritt:
+\[
+\left(
+\begin{array}{cc}
+0.9 & 0.7 \\
+0.1 & 0.3    
+\end{array}
+\right) \left(
+\begin{array}{c}
+0 \\ 1200    
+\end{array}
+\right) = \left(
+\begin{array}{c}
+0.9 \cdot 0 + 0.7 \cdot 1200 \\
+0.1 \cdot 0 + 0.3 \cdot 1200
+\end{array}
+\right) = \left(
+\begin{array}{c}
+840 \\ 360
+\end{array}
+\right).
+\]
+
+Als allgemeine Formel erhalten wir für den Zustand im $n$-ten Monat, geschrieben als Spaltenvektor wie oben:
+\[
+\left(
+\begin{array}{cc}
+0.9 & 0.7 \\
+0.1 & 0.3    
+\end{array}
+\right)^n \cdot \left(
+\begin{array}{c}
+0 \\ 1200    
+\end{array}
+\right).
+\]
+
+Die Matrix 
+\[
+\left(
+\begin{array}{cc}
+p_{BB} & p_{AB} \\
+p_{BA} & p_{AA}    
+\end{array}
+\right) = 
+\left(
+\begin{array}{cc}
+0.9 & 0.7 \\
+0.1 & 0.3    
+\end{array}
+\right)
+\]
+heißt die \emph{Übergangsmatrix}.
+
+Dass die Aufteilung zwischen beschäftigt und arbeitssuchend in jedem Monat nur von der Aufteilung im Vormonat, nicht aber von weiter zurückliegenden Monaten abhängt, nennt man die \emph{Markov-Eigenschaft}.
+
+
+Was bedeutet es, wenn die Übergangsmatrix gleiche Spalten hat?
+
+Potenzen der Übergangsmatrix
+ .. sind wieder Übergangsmatrizen
+ .. Konvergenzfrage
+
+
+
+\textbf{Literatur:} Chiang, Wainwright, Nitsch, Mathematik für Ökonomen, Kapitel 4.7.
+
+\end{document}

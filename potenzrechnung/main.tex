@@ -1,0 +1,84 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Potenzrechnung}
+\begin{document}
+\begin{abstract}
+Wiederholung: Potenzrechnung, mit Übungen.
+\end{abstract}
+\maketitle
+
+Die Potenzrechenregeln sind (für relle Zahlen $x, y, z\in \mathbb R$ und ganze Zahlen $a,b,c\in\mathbb Z$):
+
+Ist $a\ge 1$ eine natürliche Zahl, so gilt
+\[
+x^a = x \cdot \cdots \cdot x\qquad \text{(mit $a$ Faktoren auf der rechten Seite)}.
+\]
+
+\[
+x^0 = 1.
+\]
+
+\begin{equation}\label{P1}
+x^{a+b} = x^a x^b.
+\end{equation}
+
+\[
+x^{-1} = \frac{1}{x^a}.
+\]
+
+\begin{equation}\label{P2}
+(x^a)^b = x^{ab}.
+\end{equation}
+
+Schreibweise:
+\[
+{x^a}^b := x^{(a^b)})
+\]
+
+
+
+\begin{question}
+Was ist $x^3x^2x^{-3}$?
+\begin{solution}
+\begin{hint}
+Die gesuchte Potenz von $x$ berechnet sich durch Addition der Exponenten: $3+2+(-3)=$? (Potenzregel~\eqref{P1}).
+\end{hint}
+Das Ergebnis ist \answer{x^2}.
+\end{solution}
+\end{question}
+
+
+\begin{question}
+Was ist $(y^7x^3)^2y$?
+\begin{hint}
+Die Potenzen von $x$ und $y$ müssen getrennt zusammengefasst werden. Verwende die Regeln~\eqref{P1} und~\eqref{P2}.
+\end{hint}
+\begin{solution}
+Das Ergebnis ist \answer{x^6y^{15}}.
+\end{solution}
+\end{question}
+
+\begin{question}
+Vereinfache den Ausdruck $\frac{x^3y^2(x+y)^2}{xyz}$.
+\begin{solution}
+Die Lösung ist
+\answer{x^4yz^{-1} + 2 x^3y^2z^{-1} + x^2y^3z^{-1}}.
+\end{solution}
+\end{question}
+
+\begin{question}
+Vereinfache den Ausdruck ${x^3}^{-2} x^4.$
+\begin{solution}
+Das Ergebnis ist \answer{\frac{1}{x^{2}}}
+\end{solution}
+\end{question}
+
+\begin{question}
+Vereinfache den Ausdruck $\frac{x^6z^2}{y^2} + \left(\frac{y}{x^3z}\right)^{-2}$.
+\begin{solution}
+Das Ergebnis ist \answer{0}
+\end{solution}
+    
+\end{question}
+\end{document}
