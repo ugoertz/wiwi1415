@@ -3,7 +3,8 @@ name: Mathematik fuer Wirtschaftswissenschaftler
 description: Uebungen zur Vorlesung Mathematik fuer Wirtschaftswissenschaftler, Uni Duisburg-Essen, WS 2014/15.
 ---
 
-bruchrechnung/main
-potenzrechnung/main
-quadratgleichg/main
-koerperaxiome/main
+grundlagen
+  grundlagen/bruchrechnung
+woche1
+  woche1/zusatzaufgabe
+

@@ -1,0 +1,129 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 1/Zusatzaufgabe}
+\begin{document}
+\begin{abstract}
+Hier finden Sie eine Diskussion und Lösung der Zusatzaufgabe auf dem ersten Übungsblatt.
+\end{abstract}
+\maketitle
+
+In der Vorlesung wurden die folgenden ``Rechenregeln'' für reelle Zahlen aufgelistet. Es seien $x, y, z\in \mathbb R$. Dann gelten
+
+\textbf{Assoziativität der Addition:}
+$(x+y) + z = x + (y+z)$.
+
+\textbf{Existenz der Null:}
+$x +0 = x = 0 + x$.
+
+\textbf{Existenz des additiven Inversen:}
+Es gibt $x'\in \mathbb R$ mit $x+x' = 0 = x'+x$ (nämlich $x'=-x$).
+
+\textbf{Kommutativität der Addition:}
+$x + y = y + x$.
+
+\textbf{Assoziativität der Multiplikation:}
+$(x\cdot y)\cdot z = x\cdot (y\cdot z)$.
+
+\textbf{Existenz der Eins:}
+$x\cdot 1 = x = 1\cdot x$.
+
+\textbf{Existenz des multiplikativen Inversen:}
+Ist $x\ne 0$, so existiert $x'\in \mathbb R$ mit $xx' = 1 = x'x$ (nämlich $x'=\frac 1x$).
+
+\textbf{Kommutativität der Multiplikation:}
+$x\cdot y = y\cdot x$.
+
+\textbf{Distributivität:}
+$x\cdot (y+z) = x\cdot y + x\cdot z$.
+
+Diese Regeln nennt man auch die \emph{Körperaxiome}. Sie gelten zum Beispiel auch im Zahlbereich der rationalen Zahlen (und auch im Zahlbereich der komplexen Zahlen). Im Bereich der ganzen Zahlen gilt aber die Existenz des multiplikativen Inversen nicht: Ist $x=2$, so existiert keine ganze Zahl $x'$ mit $xx'=1$.
+
+
+\textbf{Aufgabe.}
+Folgern Sie aus den in der Vorlesung angegebenen Rechenregeln für reelle Zahlen (Assoziativität, Kommutativität und Existenz des neutralen Elements für Addition und Multiplikation, Existenz inverser Elemente bezüglich der Addition, Existenz inverser Elemente bezüglich der Multiplikation für alle reellen Zahlen $\ne 0$, Distributivität), dass gilt:
+\begin{enumerate}
+\item[(a)]
+$0\cdot x = 0$ für alle $x\in \mathbb R$,
+\item[(b)]
+$(-1) \cdot (-1) = 1$.
+\end{enumerate}
+
+
+\textbf{Lösung.}
+Wir beginnen mit \textbf{Teil (a)}. Sei also $x\in\mathbb R$.
+
+\begin{question}
+Es ist $0\cdot x + 0\cdot x = (0+0)\cdot x$. Aus welcher der folgenden Regeln folgt das?
+\begin{solution}
+\begin{multiple-choice}[4]
+\choice{Assoziativität der Addition}
+\choice{Existenz der Null}
+\choice{Existenz des additiven Inversen}
+\choice{Kommutativität der Addition}
+\choice{Assoziativität der Multiplikation}
+\choice{Existenz der Eins}
+\choice{Existenz des multiplikativen Inversen}
+\choice{Kommutativität der Multiplikation}
+\choice[correct]{Distributivität}
+\end{multiple-choice}
+\end{solution}
+\end{question}
+
+\begin{question}
+Es ist $(0+0)\cdot x = 0\cdot x$. Aus welcher der folgenden Regeln folgt das?
+\begin{solution}
+\begin{multiple-choice}[4]
+\choice{Assoziativität der Addition}
+\choice[correct]{Existenz der Null}
+\choice{Existenz des additiven Inversen}
+\choice{Kommutativität der Addition}
+\choice{Assoziativität der Multiplikation}
+\choice{Existenz der Eins}
+\choice{Existenz des multiplikativen Inversen}
+\choice{Kommutativität der Multiplikation}
+\choice{Distributivität}
+\end{multiple-choice}
+\end{solution}
+\end{question}
+
+
+Insgesamt erhalten wir die Gleichungskette
+\[
+0\cdot x + 0\cdot x = (0+0)\cdot x = 0\cdot x.
+\]
+
+Wir addieren nun auf beiden Seiten das negative Inverse von $0\cdot x$, also diejenige reelle Zahl $y$, für die $0\cdot x + y  = 0$, und erhalten
+\[
+(0\cdot x + 0\cdot x) + y = 0\cdot x+ y,
+\]
+also wegen $0\cdot x + y  = 0$ und unter Ausnutzung des Assoziativgesetzes:
+\[
+0\cdot x = 0\cdot x + 0 = 0.
+\]
+Dies war zu zeigen.
+
+
+Nun kommen wir zu \textbf{Teil (b)}.
+Wir rechnen
+\[
+(-1)\cdot (-1) + (-1) = (-1)\cdot (-1) + 1\cdot (-1) = ((-1)+1) \cdot (-1) = 0\cdot (-1) = 0,
+\]
+wobei wir Teil (a) benutzen, um die letzte Gleichheit einzusehen.
+Addieren wir nun $1$ auf beiden Seiten, so erhalten wir
+\[
+(-1)\cdot (-1) = (-1)\cdot (-1) + (-1) + 1 = 0+1= 1.
+\]
+
+\begin{exercise}
+Damit können wir leicht sehen, dass für alle reellen Zahlen $x,y$ gilt: $(-x)\cdot (-y) = x\cdot y$. Finden Sie eine Begründung durch die obigen Rechenregeln?
+\begin{solution}
+Zuerst zeigen wir, dass $(-1)\cdot x = -x$. In der Tat ist $x + (-1)\cdot x = 1\cdot x + (-1)\cdot x = (1+(-1))\cdot x = 0\cdot x = 0$. Addieren wir nun $-x$ auf beiden Seiten, so erhalten wir $(-1)\cdot x = -x$.
+Daraus folgt nun
+\[
+(-x)\cdot (-y) = (-1)\cdot x \cdot (-1) \cdot y = (-1)\cdot (-1)\cdot x\cdot y = 1\cdot x\cdot y = x\cdot y.
+\]
+(Wegen der Assoziativität brauchen wir in Produkten mit mehr als zwei Faktoren keine Klammern zu setzen.)
+\end{solution}
+\end{exercise}
+\end{document}
