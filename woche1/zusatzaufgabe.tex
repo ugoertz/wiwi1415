@@ -13,7 +13,7 @@ In der Vorlesung wurden die folgenden ``Rechenregeln'' für reelle Zahlen aufgel
 \textbf{Assoziativität der Addition:}
 $(x+y) + z = x + (y+z)$.
 
-\textbf{Existenz der Null:}
+\textbf{Null ist neutrales Element der Addition:}
 $x +0 = x = 0 + x$.
 
 \textbf{Existenz des additiven Inversen:}
@@ -25,7 +25,7 @@ $x + y = y + x$.
 \textbf{Assoziativität der Multiplikation:}
 $(x\cdot y)\cdot z = x\cdot (y\cdot z)$.
 
-\textbf{Existenz der Eins:}
+\textbf{Eins ist neutrales Element der Multiplikation:}
 $x\cdot 1 = x = 1\cdot x$.
 
 \textbf{Existenz des multiplikativen Inversen:}
@@ -58,11 +58,11 @@ Es ist $0\cdot x + 0\cdot x = (0+0)\cdot x$. Aus welcher der folgenden Regeln fo
 \begin{solution}
 \begin{multiple-choice}[4]
 \choice{Assoziativität der Addition}
-\choice{Existenz der Null}
+\choice{Null ist neutrales Element der Addition}
 \choice{Existenz des additiven Inversen}
 \choice{Kommutativität der Addition}
 \choice{Assoziativität der Multiplikation}
-\choice{Existenz der Eins}
+\choice{Eins ist neutrales Element der Multiplikation}
 \choice{Existenz des multiplikativen Inversen}
 \choice{Kommutativität der Multiplikation}
 \choice[correct]{Distributivität}
@@ -75,11 +75,11 @@ Es ist $(0+0)\cdot x = 0\cdot x$. Aus welcher der folgenden Regeln folgt das?
 \begin{solution}
 \begin{multiple-choice}[4]
 \choice{Assoziativität der Addition}
-\choice[correct]{Existenz der Null}
+\choice[correct]{Null ist neutrales Element der Addition}
 \choice{Existenz des additiven Inversen}
 \choice{Kommutativität der Addition}
 \choice{Assoziativität der Multiplikation}
-\choice{Existenz der Eins}
+\choice{Eins ist neutrales Element der Multiplikation}
 \choice{Existenz des multiplikativen Inversen}
 \choice{Kommutativität der Multiplikation}
 \choice{Distributivität}
@@ -89,28 +89,36 @@ Es ist $(0+0)\cdot x = 0\cdot x$. Aus welcher der folgenden Regeln folgt das?
 
 
 Insgesamt erhalten wir die Gleichungskette
+
 \[
 0\cdot x + 0\cdot x = (0+0)\cdot x = 0\cdot x.
 \]
 
 Wir addieren nun auf beiden Seiten das negative Inverse von $0\cdot x$, also diejenige reelle Zahl $y$, für die $0\cdot x + y  = 0$, und erhalten
+
 \[
 (0\cdot x + 0\cdot x) + y = 0\cdot x+ y,
 \]
+
 also wegen $0\cdot x + y  = 0$ und unter Ausnutzung des Assoziativgesetzes:
+
 \[
 0\cdot x = 0\cdot x + 0 = 0.
 \]
+
 Dies war zu zeigen.
 
 
 Nun kommen wir zu \textbf{Teil (b)}.
 Wir rechnen
+
 \[
 (-1)\cdot (-1) + (-1) = (-1)\cdot (-1) + 1\cdot (-1) = ((-1)+1) \cdot (-1) = 0\cdot (-1) = 0,
 \]
+
 wobei wir Teil (a) benutzen, um die letzte Gleichheit einzusehen.
 Addieren wir nun $1$ auf beiden Seiten, so erhalten wir
+
 \[
 (-1)\cdot (-1) = (-1)\cdot (-1) + (-1) + 1 = 0+1= 1.
 \]
@@ -118,12 +126,15 @@ Addieren wir nun $1$ auf beiden Seiten, so erhalten wir
 \begin{exercise}
 Damit können wir leicht sehen, dass für alle reellen Zahlen $x,y$ gilt: $(-x)\cdot (-y) = x\cdot y$. Finden Sie eine Begründung durch die obigen Rechenregeln?
 \begin{solution}
+\answer[free-response]{
 Zuerst zeigen wir, dass $(-1)\cdot x = -x$. In der Tat ist $x + (-1)\cdot x = 1\cdot x + (-1)\cdot x = (1+(-1))\cdot x = 0\cdot x = 0$. Addieren wir nun $-x$ auf beiden Seiten, so erhalten wir $(-1)\cdot x = -x$.
 Daraus folgt nun
+
 \[
 (-x)\cdot (-y) = (-1)\cdot x \cdot (-1) \cdot y = (-1)\cdot (-1)\cdot x\cdot y = 1\cdot x\cdot y = x\cdot y.
 \]
-(Wegen der Assoziativität brauchen wir in Produkten mit mehr als zwei Faktoren keine Klammern zu setzen.)
+
+(Wegen der Assoziativität brauchen wir in Produkten mit mehr als zwei Faktoren keine Klammern zu setzen.)}
 \end{solution}
 \end{exercise}
 \end{document}
