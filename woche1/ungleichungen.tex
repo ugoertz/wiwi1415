@@ -1,0 +1,47 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 1/Ungleichungen}
+\begin{document}
+\begin{abstract}
+Hier finden Sie eine Diskussion der Aufgabe 4b auf dem ersten Übungsblatt.
+\end{abstract}
+\maketitle
+
+
+Die Aufgabe 4b war, zu überprüfen, ob für alle reellen Zahlen $x\ge 0$ die Ungleichung $x^3 + \frac 13 \ge x$ gilt.
+
+Sofern $x\ge 1$ ist, ist $x^3 \ge x$, also erst recht $x^3 + \frac 13 \ge x$. Ein Problem kann sich also höchstens für $x$ mit $o\le x\le 1$ ergeben.
+
+\begin{question}
+Und tatsächlich: Werten wir die linke Seite aus für $x = \frac 12$, so erhalten wir:
+\begin{solution}
+\begin{hint}
+Es ist $\left(\frac 12\right)^3 = \frac 12 \cdot \frac 12\cdot \frac 12 = \frac 18$. Bringen Sie nun beide Brüche auf den selben Nenner.
+\end{hint}
+Es ist $\left(\frac 12\right)^3 + \frac 13=$ \answer{$11/24$}
+\end{solution}
+\begin{solution}
+Wir sehen also: Für $x= \frac 12$ ist die obige Ungleichung nicht erfüllt, denn $\frac{11}{24}< \frac{12}{24} = \frac 12$.
+\end{solution}
+\end{question}
+
+
+Wie ist es stattdessen mit der Ungleichung $x^3 + 1 \ge x$. Da wir die linke Seite nun vergrößert haben, sind die Aussichten sicherlich besser, dass die Ungleichung erfüllt ist: Und tatsächlich, für $x\ge 1$ ist ---wie oben--- $x^3\ge x$, also erst recht $x^3+1\ge x$. Und für $x\le 1$ ist $1\ge x$, also erst recht (da $x\ge 0$): $x^3+1\ge x$.
+
+\begin{question}
+Nun könnten wir versuchen, noch ``bessere'' Ungleichungen zu finden, die zwar für alle $x$ erfüllt sind, wo aber die Konstante auf der linken Seite möglichst klein ist. Wie ist es zum Beispiel mit der Ungleichung $x^3 + \frac 12 \ge x$? Offenbar ist diese erfüllt für $x\ge 1$, und auch für alle $x$ mit $0\le x\le \frac 12$. Werten wir die linke Seite für $x=\frac 34$ aus, so erhalten wir:
+\begin{solution}
+Es ist $\left(\frac 34\right)^3 + \frac 12 =$ \answer{59/64}.
+\end{solution}
+\begin{solution}
+Also ist die Ungleichung für den Wert $x = \frac 34$ erfüllt.
+\end{solution}
+\end{question}
+
+In der Tat kann man zeigen, dass für alle $x\ge 0$ die Ungleichung $x^3 + \frac 12 \ge x$ gilt. Eine Möglichkeit ist, die verbleibende Menge aller $x$ zwischen $\frac 12$ und $1$ in kleine Teile einzuteilen und dort jeweils die beiden Seiten abzuschätzen. Zum Beispiel gilt für $x$ mit $\frac 12 \le x \le \frac 58$: Es ist $x^3 \ge \frac 18$, also $x^3 + \frac 12 \ge \frac 58 \ge x$. Nun müsste man noch alle $x$ mit $\frac 58 < x < 1$ in ähnlicher Weise behandeln (man muss dann aber noch kleinere Abschnitte verwenden, was dieses Vorgehen ziemlich lästig macht.)
+
+Einfacher wird es für uns später, wenn wir die Methoden der Differentialrechnung zur Verfügung haben: Dann werden wir zeigen können, dass die Funktion $x\mapsto x^3 - x + \frac 12$ für alle $x\ge 0$ positive Werte hat (denn wir können die Minima dieser Funktion ausrechnen). Mit diesen Methoden ist es dann sogar einfach, die kleinste reelle Zahl $c\ge 0$ auszurechnen, so dass $x^3+c \ge x$ für alle $x\ge 0$ gilt. Wenn Sie sich an diesen Stoff noch aus der Schule erinnern, dann versuchen Sie es doch einmal!
+
+
+\end{document}
