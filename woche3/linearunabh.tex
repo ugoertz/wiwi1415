@@ -1,0 +1,122 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 3/Lineare Unabhängigkeit}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material rund um den Begriff der Linearen Unabhängigkeit.
+\end{abstract}
+\maketitle
+
+Sei $V$ ein Vektorraum.
+
+Wir haben in der Vorlesung den folgenden Begriff definiert:
+
+\textbf{Definition}
+Eine Familie von Vektoren $v_1,\dots, v_n\in V$ heißt \emph{linear unabhängig}, wenn für alle $\lambda_1,\dots, \lambda_n$ mit
+\[
+\sum_{i=1}^n \lambda_iv_i = \mathbf{0}
+\]
+gilt: Für alle $i$ ist $\lambda_i = 0$.
+
+Andernfalls heißt die Familie linear abhängig.
+\bigskip
+
+In der Vorlesung haben wir auch die folgende Bemerkung gesehen:
+
+\textbf{Satz}
+Eine Familie von Vektoren $v_1,\dots, v_n\in V$ ist genau dann linear abhängig, wenn es ein $i$ mit $1\le i\le n$ gibt, so dass sich $v_i$ als Linearkombination der Vektoren $v_1, \dots, v_{i-1}, v_{i+1}, \dots, v_n$ (also: der anderen $n-1$ Vektoren) schreiben lässt.
+\bigskip
+
+\textbf{Begründung.} Sind die Vektoren linear abhängig, so gibt es $\lambda_1, \dots, \lambda_n\in \mathbb R$, die nicht alle $=0$ sind, so dass
+\[
+\lambda_1v_1 + \lambda_2 v_2 + \cdots + \lambda_nv_n = \mathbf{0}.
+\]
+Sei $i$ zwischen $1$ und $n$, so dass $\lambda_i \ne 0$ --- da nicht alle $\lambda$'s verschwinden, können wir ein solches $i$ finden. Nun subtrahieren wir auf beiden Seiten $\lambda_iv_i$ und teilen durch $\lambda_i$ (hier benutzen wir, dass $\lambda_i\ne 0$). Wir erhalten:
+\[
+v_i = \sum_{j\ne i} -\frac{\lambda_j}{\lambda_i} v_j,
+\]
+wobei sich die Summe auf der rechten Seite über alle $j$ zwischen $1$ und $n$ erstreckt, die von $i$ verschieden sind. Damit haben wir gerade $v_i$ als Linearkombination der anderen Vektoren dargestellt.
+
+Ist andersherum
+\[
+v_i = \sum_{j\ne i} \mu_j v_j,
+\]
+so erhalten wir mit $\mu_i := -1$ die Darstellung $\sum_{j=1}^n \mu_j v_j = \mathbf{0}$ des Nullvektors als Linearkombination der $v_j$, in der nicht alle Koeffizienten $=0$ sind (denn wir wissen ja, dass wenigstens $\mu_i = -1 \ne 0$).
+\bigskip
+
+
+\begin{question}
+\textbf{Beispiel.} Ist $v_1,\dots, v_n\in V$ eine Familie von Vektoren, in der der Nullvektor vorkommt, so ist sie linear abhängig. Begründen Sie das anhand der Definition!
+\begin{solution}
+\begin{free-response}
+Ist etwa $v_i =\mathbf{0}$, so erhalten wir mit $\lambda_i:=1$ und $\lambda_j=0$ für alle $j\ne i$ die Linearkombination
+\[
+\sum_{j=1}^n \lambda_j v_j = 0v_1 + 0v_2 + \cdots + 1v_i + \cdots + 0v_n = 1v_i = 1\cdot \mathbf{0} = \mathbf{0},
+\]
+in der nicht alle Koeffizienten $=0$ sind.
+\end{free-response}
+\end{solution}
+\end{question}
+
+\begin{question}
+\textbf{Beispiel.} Seien $v, w\in V$, $v\ne \mathbf{0}$. Dann gilt: $v$ und $w$ sind genau dann linear abhängig, wenn $w$ ein Vielfaches von $v$ ist, d.h., wenn sich $w$ in der Form $w= \lambda v$ schreiben lässt. Begründen Sie dies anhand der Definition/des Satzes!
+\begin{solution}
+    \begin{free-response}
+Wenn sich $w$ in der Form $\lambda v$ schreiben lässt, also als ``Linearkombination'' des einen Vektors $v$, so sind die beiden Vektoren $v, w$ nach dem Satz linear abhängig.
+
+Sind andersherum $v$ und $w$ linear abhängig, so gibt es nach Definition reelle Zahlen $\lambda$ und $\mu$ mit
+\[
+\lambda v + \mu w = \mathbf{0},
+\]
+und so dass $\lambda\ne 0$ oder $\mu\ne 0$. Wäre aber $\mu = 0$, so erhielten wir $\lambda v = \mathbf{0}$, was wegen $v\ne\mathbf{0}$ nur für $\lambda=0$ möglich wäre --- dann wären aber doch $\lambda=\mu=0$, was wir ausgeschlossen hatten. Also ist $\mu \ne 0$ und wir können tatsächlich $w$ als Vielfaches von $v$ schreiben, nämlich
+\[
+w = -\frac{\lambda}{\mu} v.
+\]
+    \end{free-response}
+\end{solution}
+    
+\end{question}
+
+\begin{question}
+\textbf{Beispiel.} Wir wollen untersuchen, für welche reellen Zahlen $a$ die Vektoren
+\[
+v = \left( \begin{array}{c}
+1 \\ 3
+\end{array} \right), \quad
+w = \left( \begin{array}{c}
+a \\ 6
+\end{array} \right)
+\]
+linear unabhängig sind.
+\begin{solution}
+\begin{hint}
+Wende das vorherige Beispiel an; dies ist möglich, weil $v\ne\mathbf{0}$.
+\end{hint}
+\begin{hint}
+Wenn $w = \lambda v$ sein soll, muss $\lambda = 3$ sein --- egal, was $a$ ist, denn nur für $\lambda = 3$ ist die erste Zeile richtig.
+\end{hint}
+\begin{hint}
+Damit die zweite Zeile der Gleichung $w = 3 v$ richtig ist, muss $a=2$ sein. Genau in diesem Fall kann man also $w$ als Vielfaches von $v$ schreiben. Mit anderen Worten: Genau in diesem Fall sind die beiden Vektoren linear \emph{abhängig}.
+\end{hint}
+Die Vektoren sind linear unabhängig für alle $a$ bis auf $a=$ \answer{$2$}.
+\end{solution}
+\end{question}
+
+
+\begin{question}
+\textbf{Beispiel.}
+Seien $v_1, v_2, v_3\in V$ Vektoren mit $v_2 - v_1 = v_3 - v_2$. Dann sind $v_1, v_2, v_3$ linear abhängig. Begründen Sie das!
+\begin{solution}
+\begin{free-response}
+Wenn wir in der obigen Gleichung auf beiden Seiten $v_3$ subtrahieren und $v_2$ addieren, so erhalten wir
+\[
+-v_1 + 2v_2 - v_3 = \mathbf{0},
+\]
+und dies ist eine Linearkombination von $v_1$, $v_2$, $v_3$, die den Nullvektor darstellt, und in der nicht alle Koeffizienten $=0$ sind (in diesem Fall ist sogar kein einziger Koeffizient $=0$, aber das spielt eigentlich keine Rolle).
+\end{free-response}
+\end{solution}
+\end{question}
+
+
+\end{document}
