@@ -1,0 +1,150 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 3 / Blatt 3, Aufgabe 3}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material zur Aufgabe 3 auf Blatt 3 (Kern einer linearen Abbildung)
+\end{abstract}
+\maketitle
+
+\textbf{Aufgabe}
+Wir betrachten die lineare Abbildung
+\[ \phi: \mathbb R^3 \to \mathbb R^2 \quad \mbox{mit} \quad
+\phi \left(\begin{array}{c}
+x_1\\x_2\\x_3 
+\end{array}  \right) = 
+\left( \begin{array}{c}
+   x_1-x_2\\x_2-x_3 
+\end{array}   \right). \]
+Bestimmen Sie eine Basis des Kerns $\mathop{\rm Ker}(\phi)$ dieser linearen
+Abbildung. Wie gro"s ist die Dimension des Kerns?
+
+
+\begin{question}
+Zuerst benötigen wir die Definition des Kerns einer linearen Abbildung. Wie lautet sie?
+\begin{solution}
+    \begin{free-response}
+        Sei $\phi\colon V \rightarrow W$ eine lineare Abbildung. Dann ist 
+\[
+\mathop{\rm Ker} \phi = \{ v\in V;\ \phi(v) = \mathbf{0} \}.
+\]
+    \end{free-response}
+\end{solution}
+\end{question}
+
+
+Bestimmen wir als den Kern, also die Menge aller Elemente von $\mathbb R^3$, die unter $\phi$ auf den Nullvektor abgebildet werden. Für 
+\[
+x= \left(\begin{array}{c}
+x_1\\x_2\\x_3 
+\end{array}  \right)
+\]
+gilt $\phi(x) = 0$ genau dann, wenn beide Einträge des Vektors $\phi(x)$ Null sind, also genau dann, wenn  $x_1 - x_2 = 0$ und $x_2 - x_3 = 0$. Mit anderen Worten: $\phi(x) = 0$ gilt genau dann, wenn $x_1 = x_2$ und $x_2 = x_3$, d.h., wenn alle drei Einträge von $x$ übereinstimmen:
+
+\begin{question}
+Geben Sie die Menge $\mathop{\rm Ker}\phi$ in Formelschreibweise an!
+\begin{solution}
+    \begin{free-response}
+        Es ist 
+\[
+\mathop{\rm Ker}\phi = \left\{  \left(
+\begin{array}{c}
+x \\ x \\ x    
+\end{array}
+\right)  ;\ x\in \mathbb R  \right\}.
+\]
+Mit anderen Worten:
+\[
+\mathop{\rm Ker}\phi = \left\{ x\cdot  \left(
+\begin{array}{c}
+1 \\ 1 \\ 1    
+\end{array}
+\right)  ;\ x\in \mathbb R  \right\}.
+\]
+
+(Der Kern einer linearen Abbildung ist immer ein Untervektorraum des Definitionsbereichs.)
+    \end{free-response}
+\end{solution}
+\end{question}
+
+
+\begin{question}
+    Als nächstes brauchen wir die Definition des Begriffs der Basis eines Vektorraums. Geben Sie sie an.
+\begin{solution}
+    \begin{free-response}
+Sei $V$ ein Vektorraum. Eine Familie $v_1, \dots, v_n$ von Elementen von $V$ heißt Basis, wenn sich jeder Vektor aus $V$ in eindeutiger Weise als Linearkombination der Vektoren $v_1, \dots, v_n$ darstellen lässt.
+
+(Eine andere Möglichkeit, den Begriff der Basis zu charakterisieren/definieren, ist folgende:
+Sei $V$ ein Vektorraum. Eine Familie $v_1, \dots, v_n$ von Elementen von $V$ heißt Basis, wenn $V$ von den Vektoren $v_1,\dots, v_n$ erzeugt wird und die Vektoren $v_1, \dots, v_n$ linear unabhängig sind.)
+    \end{free-response}
+\end{solution}
+
+\end{question}
+
+
+Wir haben gesehen, dass der Kern von $\phi$ aus den  Vielfachen des Vektors $\left( \begin{array}{c}
+    1 \\ 1\\ 1
+\end{array} \right)$ besteht. Andererseits gilt für $x, x'\in \mathbb R$ mit $x\ne x'$, dass
+\[
+x\cdot  \left(
+\begin{array}{c}
+1 \\ 1 \\ 1    
+\end{array}
+\right) \ne  x'\cdot  \left(
+\begin{array}{c}
+1 \\ 1 \\ 1    
+\end{array}
+\right) 
+\]
+
+Also lässt sich jedes Element des Kerns in eindeutiger Weise als Vielfaches des Vektors 
+$\left( \begin{array}{c}
+    1 \\ 1\\ 1
+\end{array} \right)$ darstellen, oder mit anderen Worten: in eindeutiger Weise als Linearkombination der (einelementigen) Familie
+$\left( \begin{array}{c}
+    1 \\ 1\\ 1
+\end{array} \right)$ von Vektoren darstellen.
+
+Also ist die (einelementige) Familie 
+$\left( \begin{array}{c}
+    1 \\ 1\\ 1
+\end{array} \right)$ eine Basis des Kerns von $\phi$.
+
+
+\begin{question}
+Um die Aufgabe abzuschließen, müssen wir noch die Dimension des Kerns bestimmen. Was ist die Definition der Dimension?
+    \begin{solution}
+        \begin{free-response}
+Die Dimension eines Vektorraums ist die Anzahl der Elemente einer Basis. (Diese Anzahl ist für alle Basen gleich.)
+        \end{free-response}
+    \end{solution}
+\end{question}
+
+
+Wir sehen also: Der Kern der Abbildung $\phi$ hat Dimension $1$.
+
+
+
+Eine allgemeine Methode, den Kern einer linearen Abbildung zu bestimmen, bietet der Gauß-Algorithmus. Sei $\phi$ eine lineare Abbildung $\mathbb R^n\rightarrow \mathbb R^m$, und sei $A$ die zugehörige Abbildungsmatrix (dies ist eine $(m\times n)$-Matrix. Dann ist $\mathop{\rm Ker} \phi$ gleich der Lösungsmenge des linearen Gleichungssystems $Ax=\mathbf{0}$, oder mit anderen Worten: $\mathop{\rm Ker} \phi$ ist genau der Nullraum der Matrix $A$. Diesen kann man mit dem Gauß-Algorithmus bestimmen, indem man die Matrix $A$ in Zeilen-Stufen-Form bringt und dann die Lösungsmenge des homogenen Gleichungssystems mit der Methode aus der Vorlesung ``abliest''.
+
+\begin{question}
+Geben Sie die Abbildungsmatrix der Abbildung $\phi$ im obigen Beispiel an:
+\begin{matrix-answer}
+correctMatrix = [ ['1', '-1', '0' ], [ '0', '1', '-1' ] ]
+\end{matrix-answer}
+\end{question}
+
+
+\begin{question}
+Diese Matrix ist schon fast in Zeilen-Stufen-Form. Eine Möglichkeit, die Matrix auf Zeilen-Stufen-Form zu bringen ist es, die zweite Zeile zur ersten zu addieren. Wir erhalten dann
+\begin{matrix-answer}
+correctMatrix = [ ['1', '0', '-1' ], [ '0', '1', '-1' ] ]
+\end{matrix-answer}
+\end{question}
+
+
+Die Methode aus der Vorlesung (vom 11.11.) ergibt dann, dass der Vektor $\left(\begin{array}{c}
+-1\\-1\\-1  \end{array}\right)$ eine Basis des Kerns bildet.
+
+\end{document}
