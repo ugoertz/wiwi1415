@@ -1,0 +1,269 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 4/Anwendungen des Gauß-Algorithmus}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material über verschiedene Anwendungen des Gauß-Algorithmus.
+\end{abstract}
+\maketitle
+
+
+\textbf{Lösen linearer Gleichungssysteme}
+
+\begin{question}
+Sei
+\[
+A = \left(
+\begin{array}{cccccc}
+  0&  3&  0&  9& 12&  1\\
+  0&  2&  0&  6&  8&  0\\
+  0& -3& -2&-13&-12& -1
+\end{array}
+\right),\qquad
+b = \left(
+\begin{array}{c}
+1 \\ 1 \\ 1
+\end{array}
+\right)
+\]
+Wir wollen die Lösungsmenge des linearen Gleichungssystems $Ax=b$ bestimmen.
+
+\begin{solution}
+Bringen Sie die erweiterte Koeffizientenmatrix $(A, b)$ auf Zeilen-Stufen-Form.
+\begin{matrix-answer}
+correctMatrix = [
+[   '0',    '1',    '0',    '3',    '4',    '0',  '1/2'],
+[   '0',    '0',    '1',    '2',    '0',    '0',   '-1'],
+[   '0',    '0',    '0',    '0',    '0',    '1', '-1/2'] ]
+\end{matrix-answer}
+\end{solution}
+
+\begin{solution}
+Lesen Sie aus der Zeilen-Stufen-Form nach der Methode der Vorlesung eine spezielle Lösung des LGS ab:
+\begin{matrix-answer}
+correctMatrix = [ [ '0'], ['1/2'], ['-1'], ['0'], ['0'], ['-1/2']]
+\end{matrix-answer}
+\end{solution}
+
+\begin{solution}
+Was ist die Dimension des Lösungsraums des zugehörigen homogenen LGS?
+\answer{$3$}
+\end{solution}
+
+\begin{solution}
+Bestimmen Sie nach der Methode der Vorlesung eine Basis des Lösungsraums des zugehörigen homogenen LGS und geben Sie die Basisvektoren hier als Spalten einer Matrix an.
+\begin{matrix-answer}
+correctMatrix = [
+[   '-1',    '0',    '0'  ],
+[   '0',    '3',    '4'  ],
+[   '0',    '2',    '0'  ],
+[   '0',    '-1',    '0'  ],
+[   '0',    '0',    '-1'  ],
+[   '0',    '0',    '0'  ] ]
+\end{matrix-answer}
+\end{solution}
+\end{question}
+
+
+\textbf{Kern einer linearen Abbildung}
+
+
+Sei $\varphi\colon \mathbb R^4 \rightarrow \mathbb R^3$ die lineare Abbildung
+\[
+\left(
+\begin{array}{c}
+x_1 \\ x_2 \\ x_3 \\ x_4
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{c}
+x_3 \\ 0 \\ 2x_1 + x_2 - x_4
+\end{array}
+\right)
+\]
+
+\begin{question}
+Wir wollen den Kern von $\varphi$ bestimmen.
+
+\begin{solution}
+Geben Sie die Abbildungsmatrix $A$ der Abbildung $\varphi$ an. (Erinnerung: Es gilt dann $\varphi(x) = Ax$ für alle $x\in \mathbb R^4$.)
+\begin{matrix-answer}
+correctMatrix = [
+[ [ '0','0','1','0'], ['0','0','0','0'], ['2','1','0','-1']]
+]
+\end{matrix-answer}
+\end{solution}
+
+\begin{solution}
+Bringen Sie diese Matrix auf Zeilen-Stufen-Form.
+\begin{matrix-answer}
+correctMatrix = [
+[ '1', '1/2', '0', '-1/2' ], [ '0', '0', '1', '0' ], [ '0', '0', '0', '0' ]
+]
+\end{matrix-answer}
+\end{solution}
+
+\begin{solution}
+Es gilt $x\in \mathop{\rm Ker}\varphi \Leftrightarrow \varphi(x) = 0 \Leftrightarrow Ax=0$, also ist $\mathop{\rm Ker}\varphi$ die Lösungsmenge des homogenen LGS $Ax=0$. Geben Sie eine Basis der Lösungsmenge mit der Methode der Vorlesung an. Geben Sie die Basisvektoren als Spalten einer Matrix ein.
+\begin{matrix-answer}
+correctMatrix = [
+[  '1/2', '-1/2' ],
+[  '-1', '0' ],
+[  '0', '0' ],
+[  '0', '-1' ],
+] 
+\end{matrix-answer}
+\end{solution}
+\end{question}
+
+
+\textbf{Rang einer Matrix}
+
+Auch um den Rang einer Matrix zu bestimmen, kann man den Gauß-Algorithmus benutzen. Dies liegt an den folgenden beiden Tatsachen:
+\begin{enumerate}
+\item
+Unter den Umformungen des Gauß-Algorithmus ändert sich der Rang einer Matrix nicht. (Dies ist auch richtig für die entsprechenden Spaltenumformungen --- solange es nur um den Rang geht, darf man also auch Spaltenumformungen vornehmen, wenn das die Rechnung vereinfacht.)
+\item
+Ist $A$ eine Matrix in Zeilen-Stufen-Form, so ist der Rang von $A$ gerade die Anzahl der Nicht-Null-Zeilen (mit anderen Worten: die Anzahl der führenden Einsen).)
+\end{enumerate}
+
+\begin{question}
+    Bestimme den Rang der Matrix
+\[
+\left(
+\begin{array}{cccc}
+ 4&3&2&1  \\
+ 6&5&4&3  \\
+ 8&7&6&4  \\
+ 1&2&3&4   
+\end{array}
+\right)
+\]
+
+\begin{solution}
+Bringe die Matrix $A$ durch Zeilenumformungen auf Zeilen-Stufen-Form!
+\begin{matrix-answer}
+correctMatrix = [ [ '1',  '0', '-1',  '0'],
+[ '0',  '1',  '2',  '0'],
+[ '0',  '0',  '0',  '1'],
+[ '0',  '0',  '0',  '0'] ]
+\end{matrix-answer}
+(Um den Rang zu bestimmen, wären auch Spaltenumformungen zulässig, aber dann ist die Zeilen-Stufen-Form nicht eindeutig, so dass das Ergebnis hier nicht abgefragt werden könnte.)    
+\end{solution}
+
+\begin{solution}
+Was ist der Rang der Matrix $A$? \answer{$3$}
+\end{solution}
+\end{question}
+
+
+\textbf{Inverse einer Matrix}
+
+Wie in der Vorlesung besprochen, kann man mit dem Gauß-Algorithmus die Inverse einer regulären Matrix ausrechnen.
+
+\begin{question}
+    Berechnen Sie die Inverse der Matrix
+\[
+A = \left(
+\begin{array}{ccc}
+2 & 0 & 1 \\
+0 & 1 & 1 \\
+3 & 2 & 1
+\end{array}
+\right)
+\]
+
+\begin{solution}
+    \begin{matrix-answer}
+correctMatrix = [
+[ '1/5', '-2/5',  '1/5'],
+['-3/5',  '1/5',  '2/5'],
+[ '3/5',  '4/5', '-2/5']
+]
+    \end{matrix-answer}
+\end{solution}
+Beim Berechnen der Inversen sollten Sie immer nachher die Probe machen (das Matrizenprodukt $AA^{-1}$ muss die Einheitsmatrix ergeben!), um sicherzugehen, dass Sie keine Rechenfehler gemacht haben.
+\end{question}
+
+\textbf{Test auf lineare Unabhängigkeit}
+
+Mit dem Gauß-Algorithmus können Sie überprüfen, ob Vektoren $v_1, \dots, v_n \in\mathbb R^m$ linear unabhängig sind. Dies ist nämlich genau dann der Fall, wenn die $(m\times n)$-Matrix, deren Spalten die Vektoren $v_i$ bilden, Rang $n$ hat.
+
+\begin{question}
+    Überprüfen Sie, ob die folgenden Vektoren linear unabhängig sind:
+\[
+v_1 = \left(
+\begin{array}{c}
+   2 \\ 0 \\ 1 \\ 0 \\ 1
+\end{array}
+\right), \quad
+v_2 = \left(
+\begin{array}{c}
+   1 \\ 3 \\ 1 \\ 1 \\ 0
+\end{array}
+\right), \quad
+v_3 = \left(
+\begin{array}{c}
+   4 \\ 1 \\ 1 \\ 2 \\ 0
+\end{array}
+\right), \quad
+v_4 = \left(
+\begin{array}{c}
+   1 \\ 1 \\ 1 \\ 3 \\ 0
+\end{array}
+\right).
+\]
+\begin{solution}
+\begin{multiple-choice}
+\choice{Die Vektoren sind linear abhängig.} 
+\choice[correct]{Die Vektoren sind linear unabhängig.}
+\end{multiple-choice}
+\end{solution}
+\end{question}
+
+
+\textbf{Berechnen der Determinante}
+
+Die Umformungen des Gauß-Algorithmus ändern zwar (teilweise) die Determinante einer Matrix, aber in kontrollierter Weise. Weil eine Matrix in Zeilen-Stufen-Form automatisch eine obere Dreiecksmatrix ist, kann man ihre Determinante direkt ablesen. Deswegen lässt sich der Gauß-Algorithmus benutzen, um die Determinante einer Matrix zu bestimmen.
+
+\begin{question}
+    Bestimmen Sie die Determinante der Matrix
+\[
+A = \left(
+\begin{array}{cccc}
+ -1&1&1&1\\
+ -2&1&4&1\\
+ 0&3&1&1 \\
+ 0&1&-2&3    
+\end{array}
+\right)
+\]
+\begin{solution}
+Es ist $\det(A) =$ answer{$14$}
+\end{solution}
+\end{question}
+
+\begin{question}
+    Bestimmen Sie die Determinante der Matrix
+\[
+B = \left(
+\begin{array}{ccccc}
+1&0&-2&3&1 \\
+0&-3&-2& 1/2& 0 \\
+1/3& 1/3& 1/3& -2/3& 5/3 \\
+2&1&2&1&2 \\
+0&2&1&1&0  
+\end{array}
+\right)
+\]
+\begin{solution}
+Es ist $\det(B) =$ \answer{$-22$}
+\end{solution}
+\end{question}
+
+
+
+
+\end{document}
