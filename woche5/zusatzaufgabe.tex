@@ -1,0 +1,23 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 5/Zusatzaufgabe Blatt 5}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material zur Zusatzaufgabe auf Blatt 5.
+\end{abstract}
+\maketitle
+
+Die Zusatzaufgabe auf Blatt 5 lautete:
+
+Begründen Sie: Bestehen die Matrix $A$ und der Vektor $b$ aus rationalen Zahlen, und ist das lineare Gleichungssystem $Ax=b$ eindeutig lösbar, so besteht der Lösungsvektor aus rationalen Zahlen.
+
+Zeigen Sie an einem Beispiel, dass die entsprechende Aussage für die ganzen Zahlen anstelle der rationalen Zahlen falsch ist.
+
+
+Sei also $A$ eine Matrix, deren Einträge sämtlich rationale Zahlen sind, sei $b$ ein Vektor mit Einträgen im Bereich der rationalen Zahlen, und sei das LGS $Ax=b$ eindeutig lösbar. Dann lässt sich die eindeutige Lösung dieses LGS bestimmen, indem die erweiterte Koeffizientenmatrix $(A,b)$ durch Umformungen des Gauß-Algorithmus auf Zeilen-Stufen-Form gebracht wird. Da alle Einträge in $(A,b)$ rationale Zahlen sind, kann man den Gauß-Algorithmus komplett innerhalb des Bereichs der rationalen Zahlen durchführen, d.h. bei der Multiplikation einer Zeile mit einem Skalar $\ne 0$, und bei der Addition eines Vielfachen einer Zeile zu einer anderen, kann man stets rationale Zahlen als Vielfache wählen. Aus diesem Grund hat die Matrix $(A^*, b^*)$ in Zeilen-Stufen-Form, die man aus $(A,b)$ erhält, ebenfalls nur rationale Zahlen als Einträge. Weil man aus $b^*$ dann direkt den (in unserem Fall eindeutigen!) Lösungsvektor ablesen kann, ist klar, dass dieser nur rationale Zahlen als Einträge besitzt.
+
+Für die ganzen Zahlen kann man natürlich nicht so argumentieren, weil man im Gauß-Algorithmus normalerweise auch durch Zahlen teilen muss, um die ersten Einträge einer Zeile auf die gewünschten führenden Einsen zu bringen. Ein konkretes Beispiel ist das LGS $2x=1$ (mit einer Gleichung und einer Unbestimmten, d.h. $A$ ist hier die $(1\times 1)$-Matrix $(2)$) --- die Koeffizienten sind sämtlich ganze Zahlen, die eindeutige Lösung $x=\frac 12$ aber nicht.
+
+In dem Fall, dass das LGS unendlich viele Lösungen besitzt, gibt es immer auch Lösungsvektoren mit Einträgen, die reelle Zahlen sind, die nicht rational sind. Allerdings sieht man mit den obigen Argumenten immerhin noch, dass man eine spezielle Lösung und Basisvektoren für den Lösungsraum des zugehörigen homogenen LGS finden kann, deren Einträge rationale Zahlen sind.
+\end{document}
