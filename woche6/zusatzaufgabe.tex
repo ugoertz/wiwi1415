@@ -1,0 +1,99 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 6/Zusatzaufgabe Blatt 6}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material zur Zusatzaufgabe auf Blatt 6.
+\end{abstract}
+\maketitle
+
+Die Zusatzaufgabe auf Blatt 6 lautete:
+
+Sei $A$ eine $(m\times n)$-Matrix, und sei $A'$ eine Matrix, die aus $A$ durch eine der Zeilenumformungen des Gauß-Algorithmus hervorgeht. Zeigen Sie, dass es eine reguläre $(m\times m)$-Matrix $S$ gibt, so dass $A'=SA$.
+
+
+Wir gehen die drei Umformungen, die der Gauß-Algorithmus erlaubt, der Reihe nach durch.
+
+\textbf{1. Vertauschung zweier Zeilen.}
+
+Seien $1\le i < j \le m$. Sei $A$ eine $(m\times n)$-Matrix, und sei $A'$ die Matrix, die aus $A$ durch Vertauschung der Zeilen $i$ und $j$ entsteht. Sei $T_{ij}$ die $(m\times m)$-Matrix mit den folgenden Einträgen:
+\[
+(T_{ij})_{rs} = \left\{
+\begin{array}{ll}
+1 & \text{falls } r=s, r\ne i, r\ne j\\
+1 & \text{falls } r = i, s = j \\
+1 & \text{falls } r = j, s = i \\
+0 & \text{sonst}
+\end{array}
+\right.
+\]
+Dann gilt
+\[
+A' = T_{ij} A.
+\]
+
+Es ist nämlich für den Zeilenvektor $f_r = (0,\dots, 0,1,0,\dots, 0)$ (mit der $1$ an der $r$-ten Stelle) das Produkt $f_r A$ gerade die $r$-te Zeile von $A$. Für $r\ne i,j$ ist die $r$-te Zeile von $T_{ij}$ genau $f_r$, so dass diese Zeilen im Produkt $T_{ij}A$ unverändert werden. Die $i$-te (bzw. $j$-te) Zeile von $T_{ij}$ ist $f_j$ (bzw. $f_i$) - daher werden diese beiden Zeilen im Produkt $T_{ij}A$ gerade vertauscht.
+
+In dem einfachen Fall $m=2$, $i=1$, $j=2$, sieht die Matrix $T_{12}$ so aus:
+\[
+T_{12} = \left(
+\begin{array}{cc}
+0 & 1 \\ 1 & 0
+\end{array}
+\right)\qquad\text{(für $m=2$).}
+\]
+
+Wenn man die $i$-te und $j$-Zeile von $T_{ij}$ vertauscht, so erhält man die Einheitsmatrix, also gilt $\det(T_{ij}) = -\det(E_m) = -1$. Insbesondere ist die Matrix $T_{ij}$ regulär, weil ihre Determinante ungleich $0$ ist.
+
+\bigskip
+\textbf{2. Multiplikation einer Zeile mit einer rellen Zahl $a\ne 0$.}
+
+Sei $1\le i \le m$ und sei $a\ne 0$ eine reelle Zahl. Sei $A$ eine $(m\times n)$-Matrix, und sei $A'$ die Matrix, die aus $A$ durch Multiplikation der $i$-ten Zeile mit $a$ entsteht. Sei $D_{i}(a)$ die $(m\times m)$-Matrix mit den folgenden Einträgen:
+\[
+(D_{i}(a))_{rs} = \left\{
+\begin{array}{ll}
+1 & \text{falls } r=s, r\ne i\\
+a & \text{falls } r = s=i,\\
+0 & \text{sonst}
+\end{array}
+\right.
+\]
+Die Matrix $D_{i}(a)$ ist also eine Diagonalmatrix, deren Einträge auf der Diagonalen alle $1$ ist, bis auf den Eintrag an der $i$-ten Stelle der Diagonalen, der gleich $a$ ist.
+Dann ist leicht zu sehen, dass
+\[
+A' = D_{i}(a) A.
+\]
+
+Die Determinante der Matrix $D_{ij}(a)$ ist gleich $a$, also ist die Matrix $D_{ij}(a)$ regulär (denn nach Voraussetzung ist $a\ne0$.)
+
+
+\bigskip
+\textbf{3. Addition eines Vielfachen einer Zeile zu einer anderen Zeile}
+
+Seien $1\le i,j \le m$, $i\ne j$ und sei $a$ eine reelle Zahl. Sei $A$ eine $(m\times n)$-Matrix, und sei $A'$ die Matrix, die aus $A$ durch Addition des $a$-fachen der $j$-ten Zeile zur $i$-ten Zeile entsteht. Sei $E_{ij}(a)$ die $(m\times m)$-Matrix mit den folgenden Einträgen:
+\[
+(E_{ij}(a))_{rs} = \left\{
+\begin{array}{ll}
+1 & \text{falls } r=s\\
+a & \text{falls } r =i, s=j,\\
+0 & \text{sonst}
+\end{array}
+\right.
+\]
+Die Matrix $E_{ij}(a)$ ist eine Dreiecksmatrix. Sämtliche Einträge auf der Diagonalen sind $1$. Von den anderen Einträgen sind alle $=0$, bis auf (möglicherweise) denjenigen an der Stelle $(i,j)$ --- dieser ist gleich $a$.
+Es ist dann leicht zu sehen, dass
+\[
+A' = E_{ij}(a) A.
+\]
+
+Weil $E_{ij}(a)$ eine Dreiecksmatrix ist, ist $\det(E_{ij}(a))$ das Produkt der Diagonaleinträge, also $=1$. Insbesondere ist die Matrix $E_{ij}(a)$ regulär.
+
+
+\bigskip
+Ist $A$ eine reguläre Matrix, so ist die (eindeutig bestimmte) Matrix in Zeilen-Stufen-Form, die aus $A$ durch Umformungen des Gauß-Algorithmus entsteht, die Einheitsmatrix (warum?). Mit der Interpretation der benutzten Umformungen als Matrixmultiplikationen sieht man daher: Jede reguläre Matrix ist ein Produkt von Matrizen der Form $T_{ij}$, $E_{ij}(a)$, $D_i(a)$ (für variierende $i,j$ und $a\in\mathbb R\{0\}$).
+
+\bigskip
+Analog ist leicht zu sehen, dass die entsprechenden \emph{Spaltenumformungen} sich durch Multiplikation mit den oben beschriebenen Matrizen, aber \emph{von rechts}, beschreiben lassen.
+
+\end{document}
