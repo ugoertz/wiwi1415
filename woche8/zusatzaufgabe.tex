@@ -1,0 +1,47 @@
+\documentclass{ximera}
+% \input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\title{Woche 8/Zusatzaufgabe Blatt 8}
+\begin{document}
+\begin{abstract}
+Hier finden Sie Material zur Zusatzaufgabe auf Blatt 8.
+\end{abstract}
+\maketitle
+
+Die Zusatzaufgabe auf Blatt 8 lautete:
+
+Berechnen Sie $\sin(\pi)$, $\cos(\pi)$, $\sin(\frac{\pi}{2})$, $\cos(\frac{\pi}{2})$, $\sin(\frac{\pi}{4})$ und $\cos(\frac{\pi}{4})$.
+
+
+Wir hatten die Sinus- und Kosinus-Funktion dadurch definiert, dass der Punkt $(\cos(x), \sin(x))\in\mathbb R^2$ der Punkt auf dem Einheitskreis ist, den man vom Punkt $(1,0)$ aus erreicht, wenn man die Strecke $x$ auf dem Einheitskreis gegen den Uhrzeigersinn zurücklegt. Der Umfang des Einheitskreises ist $2\pi$.
+
+Dann ist $\pi$ genau die Hälfte des Umfangs des Einheitskreises, d.h., wenn man von $(1,0)$ aus die Strecke $\pi$ auf dem Einheitskreis zurücklegt, so erreicht man genan den gegenüberliegenden Punkt, also den Punkt $(-1,0)$. Deshalb ist $\cos(\pi) = -1$, $\sin(\pi) = 0$.
+
+Entsprechend ist $\frac{\pi}{2}$ genau ein Viertel des Umfangs des Einheitskreises. Der entsprechende Punkt auf dem Einheitskreis ist der Punkt $(0,1)$ und wir finden $\cos(\frac{\pi}{2}) = 0$, $\sin(\frac{pi}{2}) = 1$.
+
+Schließlich ist $\frac{\pi}{2}$ ein Achtel des Umfangs des Einheitskreises. Der Punkt $(\cos(\frac{\pi}{4}), \sin(\frac{\pi}{4}))$ ist also der Schnittpunkt des Einheitskreises mit der Gerade $y=x$. Es muss also
+\[
+\cos(\frac{\pi}{4}) =  \sin(\frac{\pi}{4})
+\]
+und andererseits
+\[
+\cos(\frac{\pi}{4})^2 + \sin(\frac{\pi}{4})^2 = 1
+\]
+gelten (weil der Punkt auf dem Einheitskreis liegt, sind die $x$- und $y$-Koordinate die Längen der Katheten eines rechtwinkligen Dreiecks, dessen Hypotenuse Länge $1$ hat --- die Gleichheit folgt also aus dem Satz des Pythagoras).
+
+Durch Einsetzen von $\cos(\frac{\pi}{4}) =  \sin(\frac{\pi}{4})$ und Auflösen erhalten wir
+\[
+\cos(\frac{\pi}{4}) =  \sin(\frac{\pi}{4}) = \frac{1}{\sqrt{2}}.
+\]
+
+
+Mit ähnlichen Überlegungen kann man zum Beispiel den Wert von $\cos(\frac{\pi}{3})$ und $\sin(\frac{\pi}{3})$ berechnen. Allerdings ist die schon etwas komplizierter. Hier ist eine Skizze: Weil $\frac{\pi}{3}$ ein Sechstel des Umfangs des Einheitskreises ist, beträgt der Winkel zwischen den Vektoren $(\cos(\frac{\pi}{3}), \sin(\frac{\pi}{3}))^t$ und $(1,0)^t$ ein Sechstel des Vollwinkels von $360$ Grad, also $60$ Grad. Daraus folgt, dass das Dreieck mit den Ecken $(\cos(\frac{\pi}{3}), \sin(\frac{\pi}{3}))^t$, $(1,0)^t$und $(0,0)^t$ ein gleichseitiges Dreieck ist (warum?). Die senkrechte Gerade durch $(\cos(\frac{\pi}{3}), \sin(\frac{\pi}{3}))^t$ ist daher auch eine Mittelsenkrechte dieses Dreiecks, und es folgt, dass
+\[
+\cos(\frac{\pi}{3}) = \frac 12.
+\]
+Weil immer $\cos(x)^2 + \sin(x)^2 = 1$ gilt, erhält man damit dann sofort, dass
+\[
+\sin(\frac{\pi}{3}) = \frac{\sqrt{3}}{2}
+\]
+(denn offenbar ist $\sin(\frac{\pi}{3})>0$).
+\end{document}
